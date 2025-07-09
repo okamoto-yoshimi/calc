@@ -1,0 +1,90 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #e0e0e0;
+}
+
+.calculator {
+  background-color: #333;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* 角丸に合わせて内容を隠す */
+  width: 320px;
+  padding: 20px;
+}
+
+.display {
+  background-color: #222;
+  color: #fff;
+  font-size: 3em;
+  padding: 20px;
+  text-align: right;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  min-height: 1.5em; /* 高さを確保 */
+  display: flex; /* テキストの縦方向中央寄せ */
+  align-items: center;
+  justify-content: flex-end;
+  word-break: break-all; /* 長い数字がはみ出さないように */
+  white-space: normal;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4列に分割 */
+  gap: 15px; /* ボタン間の隙間 */
+}
+
+.buttons button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  font-size: 1.8em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  user-select: none; /* テキスト選択を無効化 */
+}
+
+.buttons button:hover {
+  background-color: #777;
+  transform: translateY(-2px);
+}
+
+.buttons button:active {
+  transform: translateY(0);
+  background-color: #444;
+}
+
+/* 特定のボタンの色 */
+.buttons .clear {
+  background-color: #d9534f; /* 赤系 */
+  grid-column: span 1; /* Cボタンは1列分 */
+}
+.buttons .clear:hover {
+  background-color: #c9302c;
+}
+
+.buttons .operator {
+  background-color: #f0ad4e; /* オレンジ系 */
+}
+.buttons .operator:hover {
+  background-color: #ec971f;
+}
+
+.buttons .equals {
+  background-color: #5cb85c; /* 緑系 */
+  grid-column: span 2; /* =ボタンは2列分 */
+}
+.buttons .equals:hover {
+  background-color: #4cae4c;
+}
+
+.buttons .zero {
+  grid-column: span 2; /* 0ボタンは2列分 */
+}
